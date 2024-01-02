@@ -1,0 +1,183 @@
+.form-group{
+  margin-bottom: 24px;
+  position: relative;
+  .form-label{
+    // color:$text-gray-800; 
+    font-size: 14px; 
+    line-height: 1; 
+    margin-bottom: 10px;
+    font-family: font(md);
+    &-floating{
+      position: absolute;
+      margin-bottom: 0px!important;
+      padding: 0 5px;
+      background-color: $white;
+      top: -5px;
+      left: 10px;
+      z-index: 9;
+    }
+  }  
+  .form-control-wrap{
+    position: relative;
+  }
+  .form-control { 
+    border-radius: 10px !important;
+    border-color:  $form-border;
+    background: $form-input;
+    font-size: 14px; 
+    color: $white!important;
+    padding: 5px 15px;
+    height:45px;
+    font-family: font(rg);
+    &::value{
+      color: $white;
+    }
+    &.is-invalid{
+      border-color: $danger!important;
+    }
+    @include placeholder{
+      color:  $white;
+    }
+    &-lg{
+      height:50px;
+    }
+    &:focus {
+      border-color: $primary; 
+      box-shadow: none;
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active{
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: $white;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+    &.dateSelect{cursor: pointer;}
+  }
+  .form-check{
+    &-label{
+      cursor: pointer;
+    }
+    &-input{
+      cursor: pointer;
+      background-color: $form-input;
+      border-color: $form-border;
+      width: 18px;
+      height: 18px;
+      &:focus{
+        box-shadow: none;
+      }
+      &:checked{
+        box-shadow: none;
+        background-color: $primary;
+      }
+    }
+  }
+  .fieldicon {
+    &-input {
+      &-right {
+        padding-inline-end: 35px;
+      }
+      &-left {
+        padding-inline-start: 35px;
+      }
+    }
+    &-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: $text-gray-800;
+      text-decoration: none;
+      z-index: 1;
+      width: 50px;
+      height: 100%;
+      @include flexcenter(both);
+      line-height: normal;
+      cursor: pointer;
+      z-index: 99;
+      em{
+        font-size: 18px;
+      }
+      + .form-control{
+        padding-right: 50px;
+      }
+    }
+    &-left {
+      position: absolute;
+      top: 17px;
+      left: 10px;
+      color: $text-gray-800;
+      text-decoration: none;
+      z-index: 1;
+      cursor: text;
+    }
+    .toggle-password {
+      cursor: pointer;
+      // @include media-breakpoint-up(xxl) {
+      //   font-size: 20px;
+      // }
+    }
+    @include media-breakpoint-down(xxl){
+      &-right {
+        width: 45px;
+        + .form-control{
+          padding-right: 45px;
+        }
+      }
+    }
+    @include media-breakpoint-down(lg){
+      &-right {
+        width: 40px;
+        em{font-size: 16px;}
+        + .form-control{
+          padding-right: 40px;
+        }
+      }
+    }
+  }
+  textarea{
+    &.form-control{
+      height:100px;resize:none; 
+      &-large{
+        height: 180px;
+        padding: 15px;
+      } 
+    }
+  }
+  @media screen and (max-width:1699px){
+    .form-control-wrap{
+      .form-icon{
+        em{font-size: 16px;}
+      }
+    }
+  }
+  @include media-breakpoint-down(xxl){
+    .form-control{
+      height: 45px;
+    }
+    .form-control-wrap{
+      .form-icon{
+        em{font-size: 15px;}
+      }
+    }
+  }
+  @include media-breakpoint-down(lg){
+    // margin-bottom: 18px;
+    .form-label{
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    // .form-control{
+    //   height: 40px;
+    // }
+    .form-control-wrap{
+      .form-icon{
+        em{font-size: 14px;}
+      }
+    }
+  }
+  // @include media-breakpoint-down(md){
+  //   margin-bottom: 15px;
+  // }
+}

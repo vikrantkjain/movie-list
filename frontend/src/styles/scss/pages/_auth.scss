@@ -1,0 +1,71 @@
+.signUppage{
+    background-color: $secondary;
+    // background-image: url('../../images/waves.png');
+    // background-position: bottom;
+    // background-repeat: no-repeat;
+    // background-size: 100%;
+    h1{
+        text-align: center;
+        font-family: font(sb);
+        color: $white;
+        margin-bottom: 40px;
+        font-size: 64px;
+    }
+    &_form{
+        max-width: 300px;
+        width: 100%;
+        .form-check{
+            width: fit-content;
+            &-input{
+                margin-top: 3px;
+                margin-right: 8px;            
+            }
+            &-label{
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+        
+    }
+    &.emptyPage{
+        .btn{
+            max-width: 200px;
+            margin: 0 auto;
+        }
+    }
+    @include media-breakpoint-down(xxl){
+        h1{
+            font-size: 50px;
+        }
+    }
+    @include media-breakpoint-down(xl){
+        h1{
+            font-size: 48px;
+        }
+        &.emptyPage{
+            h1{
+                font-size: 40px;
+            }
+        }
+    }
+    @include media-breakpoint-down(lg){
+        &.emptyPage{
+            h1{
+                font-size: 32px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm){
+        &_form{
+            width: 100%;
+            max-width: 100%;
+        }
+        .btn{
+            font-size: 16px;
+        }
+        .container{
+            padding: 0px 24px;
+        }
+    }   
+}

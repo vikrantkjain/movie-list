@@ -1,0 +1,127 @@
+// variables
+$height:56px;
+$height-lg:50px;
+$height-md:40px;
+$height-sm:35px;
+$white-color:$white;
+$btn-primary: $primary;
+$btn-success: $success;
+$btn-danger: $danger;
+$btn-warning: $warning;
+$btn-info: $info;
+$btn-light: #e6eaed;
+$btn-dark: $dark;
+
+$btnColors: (
+  primary: (
+    clr: $white-color,
+    bg: $btn-primary,
+  ),
+  success: (
+    clr: $white-color,
+    bg: $btn-success,
+  ),
+  danger: (
+    clr: $white-color,
+    bg: $btn-danger,
+  ),
+  warning: (
+    clr: $white-color,
+    bg: $btn-warning,
+  ),
+  info: (
+    clr: $white-color,
+    bg: $btn-info,
+  ),
+  light: (
+    clr: $btn-dark,
+    bg: $btn-light,
+  ),
+  dark: (
+    clr: $white-color,
+    bg: $btn-dark,
+  ),
+);
+.btn{
+    height: $height;display: inline-flex; justify-content: center; align-items: center;
+    border-radius: 10px;padding:8px 20px;font-size: 16px; position: relative; z-index: 1;font-family: font(bd);
+    &-lg{
+      height:$height-lg;
+    }
+    &-sm{
+        height:$height-sm;padding:6px 15px;
+    }
+    &-outline{
+      background-color: transparent;
+      border: 1px solid $white-color;
+      color:$white-color;
+      &:hover{
+        background-color: $white-color;
+        color: #000;
+      }
+    }
+    em{
+      font-size: 18px;
+      &.lefticon{margin-right: 8px}
+      &.righticon{margin-left: 8px}
+    }
+    @each $key, $clrValue in $btnColors {
+        // solid button
+        &-#{$key} {
+            @include button-variant(map-get($clrValue, clr), map-get($clrValue, bg), map-get($clrValue, bg));
+        }
+        // outline button
+        &-outline-#{$key} {
+            @include button-outline-variant(map-get($clrValue, bg), map-get($clrValue, clr), map-get($clrValue, bg));
+        }   
+    }
+    @include media-breakpoint-down(xxl){
+      &-lg{
+        height:$height;
+      }
+    }
+    @include media-breakpoint-down(xl){
+       padding: 5px 10px; font-size: 14px;     white-space: nowrap;
+        &-sm{
+          height: $height-sm;
+        }
+    }
+    @include media-breakpoint-down(lg){
+      // height: $height-md;
+      &-sm{
+        height: $height-sm;
+      }
+    }
+}
+// Ripple Effect
+@keyframes ripple {
+    0% {
+        transform: scale(4);
+    }
+    100% {
+        opacity: 0; transform: scale(40);
+    }
+  }
+  .ripple-effect-dark,
+  .ripple-effect {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  .ripple-effect span.ripple-overlay,
+  .ripple-effect-dark span.ripple-overlay {
+    animation: ripple 0.9s;
+    border-radius: 100%;
+    background: $white-color;
+    height: 12px;
+    position: absolute;
+    width: 12px;
+    line-height: 12px;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .ripple-effect-dark span.ripple-overlay {
+    background: $black; opacity: 0.07;
+  }
+

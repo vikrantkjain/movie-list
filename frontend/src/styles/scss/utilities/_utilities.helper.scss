@@ -1,0 +1,65 @@
+
+//Element
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  font-size: 16px;
+  line-height: 22px;
+  font-family: font(rg);
+  position: relative;
+  color: $white;
+  background-color: $secondary;
+  @include media-breakpoint-down(sm) {
+    font-size: 14px;
+  }
+}
+a,
+.btn {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    @include transition(all 0.4s);
+  }
+}
+//bg-image
+.bg-img{
+  min-height: 100vh;
+  background-image: url('../../images/waves.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100%;
+  @include media-breakpoint-down(sm){
+    background-image: url('../../images/waves-mobile.png');
+  }
+}
+
+// generic
+:focus {
+  outline: 0 !important;
+}
+::-moz-selection {
+  color: $white;
+  background: $primary;
+}
+::selection {
+  color: $white;
+  background: $primary;
+}
+::-webkit-scrollbar {
+  width: 6px;height: 6px;
+  @include media-breakpoint-down(lg) {
+      width: 4px;height: 4px;
+  }
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: none; background-color: #e2e5e6;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: none; background-color: $primary;
+}

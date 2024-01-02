@@ -1,0 +1,36 @@
+.movieCard{
+    background-color: #092C39;
+    border-radius: 12px;
+    padding: 8px;
+    img{
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    &_info{
+        padding: 16px 8px 8px 8px;
+        h2{font-size: 20px;font-family: font(md);margin-bottom: 8px;text-transform: capitalize;}
+        p{font-size: 14px;}
+    }
+    @include media-breakpoint-down(md){
+        &_info{
+            h2{font-size: 18px;}
+        }
+        img{height: 300px;}
+    }
+    @include media-breakpoint-down(sm){
+        padding: 0;
+        margin-bottom: 40px;
+        &_info{
+            padding: 12px;
+            h2{
+                font-size: 16px;
+                margin-bottom: 16px;
+            }
+        }
+        img{
+            height: 250px;
+        }
+    }
+}

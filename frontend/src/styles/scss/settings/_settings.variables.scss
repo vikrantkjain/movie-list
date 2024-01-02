@@ -1,0 +1,59 @@
+// fonts
+$fonts: (
+  rg: ("Montserrat-Regular", Arial,sans-serif),
+  md: ("Montserrat-Medium", Arial,sans-serif),
+  sb: ("Montserrat-SemiBold", Arial,sans-serif),
+  bd: ("Montserrat-Bold", Arial,sans-serif),
+);
+
+@function font($font) {
+  // checking to see if our $theme-fonts map has that $font key
+  @if map-has-key($fonts, $font) {
+    // and if so, it will get that font for us in the map-get syntax
+    @return map-get($fonts, $font);
+  }
+  // if not, it will give us a helpful error when we compile
+  @error "Unknown `#{$font}` in $fonts.";
+  @return null;
+}
+
+$imageurl: "../../images";
+$fonturl: "../../fonts";
+
+$white:		#fff;
+$black: 	#000;
+
+$primary: #2BD17E;
+
+
+$secondary: #093545;
+$success:#00b69b;
+$danger:#EB5757;
+$warning:#ffc107;
+$info: #0dcaf0;
+$light: #f8f9fa;
+$dark: $black;
+
+$border-color-100: #eff5f6;
+$border-color-200: #ebebeb;
+$text-gray-100: #F9F9F9;
+$text-gray-200: #F1F1F2;
+$text-gray-300: #DBDFE9;
+$text-gray-400: #B5B5C3;
+$text-gray-500: #99A1B7;
+$text-gray-600: #78829D;
+$text-gray-700: #4B5675;
+$text-gray-800: #252F4A;
+$text-primary: $primary;
+
+$bg-light : rgba($primary, 0.06);
+
+$form-input : #224957;
+$form-border : $form-input;
+
+//sidebar Variables
+$sidebar-width : 275px;
+$sidebar-bg : #03272e;
+$sidebar-menu-item-color : rgba($white, 0.6);
+$sidebar-menu-item-active-bg : $primary;
+$sidebar-sub-menu-tree-color : #10505c;

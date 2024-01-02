@@ -1,0 +1,124 @@
+.createMovie{
+    padding: 120px 0;
+    h1{
+        font-size: 48px;
+        font-family: font(sb);
+        color: $white;
+        margin-bottom: 120px;
+        line-height: 56px;
+    }
+    .form-control-md{width: 216px;}
+    &_btn{
+        margin-top: 64px;
+    }
+    .uploadDocument{
+        input{
+            position: absolute;
+            opacity: 0;
+            left: 0;
+            top: 0;
+            z-index: -6;
+        }
+        label{
+            width: 100%;
+            cursor: pointer;
+            margin-bottom: 0;
+            transition: all .5s;
+            border: 2px dashed $white;
+            background-color: rgba($white, 0.10);
+            padding: 10px;
+            height: 504px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h6{
+            font-size: 14px;
+            color: #fff;
+            line-height: 24px;
+            font-family: font(rg);
+        }
+        em{
+            margin-bottom: 8px;
+            font-size: 20px;
+            color: $white;
+        }
+        .ant-upload-wrapper, .ant-upload{
+            width: 100%;
+        }
+        img{
+            height: 480px;
+            object-fit: cover;
+        }
+    }
+    @media (max-width: 1599px) {
+        padding: 80px 0;
+        h1{
+            margin-bottom: 80px;
+        }
+    }
+    @include media-breakpoint-down(xxl){
+        h1{
+            font-size: 44px;
+            line-height: 50px;
+        }
+        &_btn{margin-top: 60px;}
+        .uploadDocument{
+            label{
+                height: 450px;
+            }
+            img{
+                height: 425px;
+            }
+        }
+    }
+    @include media-breakpoint-down(xl){
+        padding: 80px 0;
+        h1{
+            font-size: 40px;
+            margin-bottom: 90px;
+            line-height: 44px;
+        }
+        &_btn{margin-top: 52px;}
+        .uploadDocument{
+            label{
+                height: 400px;
+            }
+            img{
+                height: 375px;
+            }
+        }
+    }
+    @include media-breakpoint-down(lg){
+        h1{
+            font-size: 36px;
+        }
+        &_btn{margin-top: 46px;}
+    }
+    @include media-breakpoint-down(md){
+        h1{
+            font-size: 32px;
+            line-height: 40px;
+            margin-bottom: 80px;
+        }
+        .form-control-md{width: 100%;}
+        &_btn{margin-top: 40px;}
+        .uploadDocument{
+            label{
+                height: 372px;
+            }
+            img{
+                height: 345px;
+            }
+        }
+    }
+    @include media-breakpoint-down(sm){
+        .container{
+            padding: 0px 24px;
+        }
+        .btn{
+            font-size: 16px;
+        }
+    }
+}

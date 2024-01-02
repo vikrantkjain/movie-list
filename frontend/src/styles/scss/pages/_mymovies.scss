@@ -1,0 +1,96 @@
+.myMoviesPage{
+    padding: 120px 0 220px 0;
+    &_head{
+        margin-bottom: 120px;
+        h1{
+            font-size: 48px;
+            margin-right: 8px;
+            margin-bottom: 0;
+            font-family: font(md);
+        }
+        .icon-plus-circle{
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        a{
+            font-size: 16px;
+            font-family: font(sb);
+            color: $white;
+            .icon{
+                margin-left: 10px;
+                color: $white;
+                font-size: 18px;
+            }
+        }
+    }
+    @include media-breakpoint-down(xxl){
+        padding: 100px 0 150px 0;
+        &_head{
+            margin-bottom: 100px;
+            h1{
+                font-size: 40px;
+            }
+        }
+    }
+    @include media-breakpoint-down(lg){
+        padding: 80px 0 120px 0;
+        &_head{
+            margin-bottom: 80px;
+            a{
+                font-size: 0;
+            }
+            h1{
+                font-size: 32px;
+            }
+        }
+    }
+    @include media-breakpoint-down(sm){
+        .gx-20{
+            --bs-gutter-x: 20px;
+        }
+        .container{
+            padding: 0px 24px;
+        }
+    }
+}
+
+.pagination{
+    .page-item{
+        &:first-child,&:last-child{
+            .page-link{
+                background-color: transparent;
+                color: $white;
+                font-family: font(bd);
+                border: none;
+            }
+        }
+        &:not(:first-child){
+            margin-left: 10px;
+            .page-link{
+                border-radius: 5px;
+            }
+        }
+        .next{
+            margin-left: 0px;
+        }
+        .prev{
+            margin-left: 0px;
+        }
+    }
+    .page-link{
+        background-color: #092C39;
+        border-color: #092C39;
+        border-radius: 5px;
+        color: $white;
+        font-family: font(bd);
+    }
+    .active{
+        .page-link{
+             background-color: $primary;
+             color: $white;
+             border-color: $primary;
+             font-family: font(bd);
+             border-radius: 5px;
+         }
+     }
+}
